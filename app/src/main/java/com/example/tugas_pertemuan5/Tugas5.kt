@@ -289,4 +289,33 @@ fun FormBiodata(modifier: Modifier = Modifier) {
                 }
             }
 
+            // Tombol Proceed
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        top = dimensionResource(R.dimen.padding_medium)
+                    )
+                    .height(dimensionResource(R.dimen.tinggi_tombol)),
+                shape = bentukField,
+                enabled = textDepan.isNotEmpty() &&
+                        textBelakang.isNotEmpty() &&
+                        textEmail.isNotEmpty() &&
+                        textTgl.isNotEmpty() &&
+                        textExp.isNotEmpty() &&
+                        skillDipilih.isNotEmpty(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.ungu_judul),
+                    contentColor = colorResource(R.color.putih),
+                    disabledContainerColor = colorResource(R.color.abu_tombol),
+                    disabledContentColor = colorResource(R.color.putih)
+                )
+            ) {
+                Text(stringResource(R.string.proceed))
+            }
+        }
+    }
+
+
 }

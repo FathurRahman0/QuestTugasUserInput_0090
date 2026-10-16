@@ -26,4 +26,15 @@
     <string name="zona_waktu" translatable="false">UTC</string>
     <string name="separator_skill">", "</string>
 
+    <!-- Deskripsi aksesibilitas -->
+    <string name="desc_banner">Banner neon laba-laba</string>
+    <string name="desc_kalender">Pilih tanggal</string>
+    <string name="desc_dropdown">Buka pilihan</string>
+
+    <!-- Pilihan dropdown Experience -->
+    <string-array name="daftar_experience">
+        <item>Junior (&lt; 1 tahun)</item>
+        <item>Middle (1-3 tahun)</item>
+        <item>Senior (&gt; 3 tahun)</item>
+    </string-array>
 </resources>

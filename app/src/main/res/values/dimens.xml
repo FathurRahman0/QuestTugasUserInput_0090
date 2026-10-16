@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <dimen name="tinggi_banner">300dp</dimen>
+    <dimen name="jarak_kartu">200dp</dimen>
+    <dimen name="radius_kartu">32dp</dimen>
+    <dimen name="radius_field">16dp</dimen>
+    <dimen name="padding_form">24dp</dimen>
+    <dimen name="padding_kecil">8dp</dimen>
+    <dimen name="tinggi_tombol">56dp</dimen>
+    <dimen name="tinggi_hasil">140dp</dimen>
+    <dimen name="lebar_hasil">300dp</dimen>
+    <dimen name="elevasi_kartu">10dp</dimen>
+    <dimen name="divider_tipis">1dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
 </resources>

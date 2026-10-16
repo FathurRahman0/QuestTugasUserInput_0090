@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ungu_judul">#FF6A3DB8</color>
+    <color name="abu_teks">#FF757575</color>
+    <color name="putih">#FFFFFFFF</color>
+    <color name="hitam">#FF000000</color>
+    <color name="abu_tombol">#FFE0E0E0</color>
+    <color name="abu_garis">#FF444444</color>
+</resources>

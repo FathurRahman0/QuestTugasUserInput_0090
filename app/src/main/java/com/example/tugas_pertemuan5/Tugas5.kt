@@ -249,4 +249,44 @@ fun FormBiodata(modifier: Modifier = Modifier) {
                 }
             }
 
+            // Pilihan skill
+            Text(
+                text = stringResource(R.string.pilih_skill),
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        top = dimensionResource(R.dimen.padding_medium)
+                    )
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                daftarSkill.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Checkbox(
+                            checked = skillDipilih.contains(item),
+                            onCheckedChange = { dicentang ->
+                                if (dicentang) {
+                                    skillDipilih.add(item)
+                                } else {
+                                    skillDipilih.remove(item)
+                                }
+                            }
+                        )
+
+                        Text(
+                            text = stringResource(item),
+                            style = MaterialTheme.typography.labelMedium
+                        )
+                    }
+                }
+            }
+
 }

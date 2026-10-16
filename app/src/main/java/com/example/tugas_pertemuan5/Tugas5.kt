@@ -92,5 +92,38 @@ fun FormBiodata(modifier: Modifier = Modifier) {
         topEnd = dimensionResource(R.dimen.radius_kartu)
     )
 
+    Box(
+        modifier = modifier
+            .shadow(
+                elevation = dimensionResource(R.dimen.elevasi_kartu),
+                shape = bentukKartu
+            )
+            .clip(bentukKartu)
+            .background(colorResource(R.color.putih))
+    ) {
+        Column(
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
+                .padding(dimensionResource(R.dimen.padding_form)),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            Text(
+                text = stringResource(R.string.form_title),
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = colorResource(R.color.ungu_judul)
+            )
+
+            Text(
+                text = stringResource(R.string.form_subtitle),
+                style = MaterialTheme.typography.bodySmall,
+                color = colorResource(R.color.abu_teks),
+                modifier = Modifier.padding(
+                    top = dimensionResource(R.dimen.padding_kecil),
+                    bottom = dimensionResource(R.dimen.padding_medium)
+                )
+            )
+
 
 }

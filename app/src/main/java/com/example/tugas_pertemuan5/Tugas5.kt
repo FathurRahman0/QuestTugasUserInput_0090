@@ -57,5 +57,40 @@ import java.util.TimeZone
 @Composable
 fun FormBiodata(modifier: Modifier = Modifier) {
 
+    val context = LocalContext.current
+
+    val daftarExp = stringArrayResource(R.array.daftar_experience)
+
+    val daftarSkill = listOf(
+        R.string.skill_android,
+        R.string.skill_uiux,
+        R.string.skill_web
+    )
+
+    var textDepan by remember { mutableStateOf("") }
+    var textBelakang by remember { mutableStateOf("") }
+    var textEmail by remember { mutableStateOf("") }
+    var textTgl by remember { mutableStateOf("") }
+    var textExp by remember { mutableStateOf("") }
+
+    val skillDipilih = remember { mutableStateListOf<Int>() }
+
+    var tampilDatePicker by remember { mutableStateOf(false) }
+    var tampilDropdown by remember { mutableStateOf(false) }
+
+    val datePickerState = rememberDatePickerState()
+
+    val formatTanggal = stringResource(R.string.format_tanggal)
+    val zonaWaktu = stringResource(R.string.zona_waktu)
+
+    val bentukField = RoundedCornerShape(
+        dimensionResource(R.dimen.radius_field)
+    )
+
+    val bentukKartu = RoundedCornerShape(
+        topStart = dimensionResource(R.dimen.radius_kartu),
+        topEnd = dimensionResource(R.dimen.radius_kartu)
+    )
+
 
 }

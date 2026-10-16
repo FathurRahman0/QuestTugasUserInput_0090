@@ -125,5 +125,23 @@ fun FormBiodata(modifier: Modifier = Modifier) {
                 )
             )
 
+            // Nama depan dan nama belakang
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(
+                    dimensionResource(R.dimen.padding_kecil)
+                )
+            ) {
+                OutlinedTextField(
+                    value = textDepan,
+                    onValueChange = { textDepan = it },
+                    singleLine = true,
+                    shape = bentukField,
+                    modifier = Modifier.weight(1f),
+                    label = {
+                        Text(stringResource(R.string.nama_depan))
+                    }
+                )
+
 
 }

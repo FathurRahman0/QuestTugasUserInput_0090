@@ -155,5 +155,18 @@ fun FormBiodata(modifier: Modifier = Modifier) {
                 )
             }
 
+            // Email
+            OutlinedTextField(
+                value = textEmail,
+                onValueChange = { textEmail = it },
+                singleLine = true,
+                shape = bentukField,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = dimensionResource(R.dimen.padding_kecil)),
+                label = {
+                    Text(stringResource(R.string.email))
+                }
+            )
 
 }

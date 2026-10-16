@@ -169,4 +169,84 @@ fun FormBiodata(modifier: Modifier = Modifier) {
                 }
             )
 
+            // Tanggal lahir dan Experience
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = dimensionResource(R.dimen.padding_kecil)),
+                horizontalArrangement = Arrangement.spacedBy(
+                    dimensionResource(R.dimen.padding_kecil)
+                )
+            ) {
+                OutlinedTextField(
+                    value = textTgl,
+                    onValueChange = {},
+                    readOnly = true,
+                    singleLine = true,
+                    shape = bentukField,
+                    modifier = Modifier.weight(1f),
+                    label = {
+                        Text(stringResource(R.string.tgl_lahir))
+                    },
+                    trailingIcon = {
+                        IconButton(
+                            onClick = { tampilDatePicker = true }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.DateRange,
+                                contentDescription = stringResource(
+                                    R.string.desc_kalender
+                                )
+                            )
+                        }
+                    }
+                )
+
+                Box(modifier = Modifier.weight(1f)) {
+                    OutlinedTextField(
+                        value = textExp,
+                        onValueChange = {},
+                        readOnly = true,
+                        singleLine = true,
+                        shape = bentukField,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { tampilDropdown = true },
+                        label = {
+                            Text(stringResource(R.string.experience))
+                        },
+                        trailingIcon = {
+                            Icon(
+                                imageVector = Icons.Default.ArrowDropDown,
+                                contentDescription = stringResource(
+                                    R.string.desc_dropdown
+                                )
+                            )
+                        }
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.tinggi_tombol))
+                            .clickable { tampilDropdown = true }
+                    )
+
+                    DropdownMenu(
+                        expanded = tampilDropdown,
+                        onDismissRequest = { tampilDropdown = false }
+                    ) {
+                        daftarExp.forEach { item ->
+                            DropdownMenuItem(
+                                text = { Text(item) },
+                                onClick = {
+                                    textExp = item
+                                    tampilDropdown = false
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+
 }

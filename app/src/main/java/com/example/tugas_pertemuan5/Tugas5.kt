@@ -54,3 +54,8 @@ import java.util.Locale
 import java.util.TimeZone
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormBiodata(modifier: Modifier = Modifier) {
+
+
+}

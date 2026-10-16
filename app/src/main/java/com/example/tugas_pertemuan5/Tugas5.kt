@@ -317,5 +317,36 @@ fun FormBiodata(modifier: Modifier = Modifier) {
         }
     }
 
-
+    // Dialog kalender
+    if (tampilDatePicker) {
+        DatePickerDialog(
+            onDismissRequest = { tampilDatePicker = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        datePickerState.selectedDateMillis?.let { millis ->
+                            val format = SimpleDateFormat(
+                                formatTanggal,
+                                Locale.getDefault()
+                            )
+                            format.timeZone = TimeZone.getTimeZone(zonaWaktu)
+                            textTgl = format.format(Date(millis))
+                        }
+                        tampilDatePicker = false
+                    }
+                ) {
+                    Text(stringResource(R.string.ok))
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { tampilDatePicker = false }
+                ) {
+                    Text(stringResource(R.string.batal))
+                }
+            }
+        ) {
+            DatePicker(state = datePickerState)
+        }
+    }
 }
